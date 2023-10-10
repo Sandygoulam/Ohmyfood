@@ -1,0 +1,159 @@
+@import '../SASS/Variables/Variables.scss';
+@import '../SASS/Mixins/Mixins.scss';
+
+/*HEADER*/
+header {
+  width: 100%;
+  height: 64px;
+  @include header-shadow;
+  display: flex;
+
+  & .logo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+
+  & i {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 24px;
+    font-size: 20px;
+  }
+}
+
+/*Position*/
+.position {
+  width: 100%;
+  background-color: $light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+  margin-top: 5px;
+  & i {
+    width: 16px;
+    height: 20px;
+  }
+  & span {
+    @include text-font;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+/*Grand titre*/
+.big-title {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: $light-grey2;
+  display: grid;
+  place-items: center;
+
+
+}
+/*Fonctionnement*/
+.functioning {
+  width: 100%;
+  counter-reset: steps-functioning;
+  margin-bottom: 30px;
+}
+
+.all-steps {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+
+  & .step {
+    max-width: 82%;
+    height: 20px;
+    background-color: $light-grey2;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include shadow-button;
+    position: relative;
+  }
+  & div::before {
+    counter-increment: steps-functioning;
+    content: '' counter(steps-functioning);
+    width: 30px;
+    height: 30px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    @include text-font;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-white;
+    position: absolute;
+    left: -14px;
+  }
+
+  & i {
+    font-size: 20px;
+    color: darken($light-grey, 40%);
+    margin-right: 10px;
+  }
+}
+
+/*Restaurants*/
+.restaurants {
+  width: 100%;
+  background-color: $light-grey2;
+  padding-top: 10px;
+  padding-bottom: 45px;
+
+  & .restaurants-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+/*Footer*/
+footer {
+  width: 100%;
+  background-color: $dark-grey;
+  padding: 22px;
+  position: relative;
+
+  & h3 {
+    color: $text-white;
+    margin: 0 0 15px 10px;
+
+  }
+
+  & .footer-container {
+    display: flex;
+    flex-direction: column;
+    }
+
+    & a {
+      @include text-font;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $text-white;
+      margin: 8px 10px;
+      position: relative;
+
+      i {
+        width: 22px;
+        font-size: 16px;
+      }
+
+    }
+  }
